@@ -6,7 +6,7 @@ import userRoutes from './src/routes/userRoutes.mjs';
 import reviewRoutes from './src/routes/reviewRoutes.mjs';
 import cors from "cors"
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT =  5000;
 const corsOptions = {
   origin: "*",
   credentials: true,
