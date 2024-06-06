@@ -7,8 +7,13 @@ import reviewRoutes from './src/routes/reviewRoutes.mjs';
 import cors from "cors"
 const app = express();
 const PORT = process.env.PORT || 5000;
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
-app.use(cors());
 
 // Connect to MongoDB
 connect(
