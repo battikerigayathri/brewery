@@ -4,11 +4,11 @@ import { connect } from 'mongoose';
 import userRoutes from './src/routes/userRoutes.mjs';
 // import breweryRoutes from './routes/breweryRoutes.js';
 import reviewRoutes from './src/routes/reviewRoutes.mjs';
-
+import cors from "cors"
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(bodyParser.json());
+app.use(cors());
 
 // Connect to MongoDB
 connect(
