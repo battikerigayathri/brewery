@@ -23,9 +23,9 @@ connect(
 
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use('/', userRoutes);
 // app.use('/api/breweries', breweryRoutes);
-app.use('/api/reviews', reviewRoutes);
+app.use('/', reviewRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
