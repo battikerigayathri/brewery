@@ -11,7 +11,9 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-connect("mongodb://localhost:27017/brewery")
+connect(
+  "mongodb+srv://shashanksonwane305:1IrdhnVfQFmGEenv@cluster0.o9dunyc.mongodb.net/?retryWrites=true&w=majority"
+)
   .then(() => {
     console.log("Database Connected Successfully");
   })
