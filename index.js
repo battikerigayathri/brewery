@@ -12,13 +12,13 @@ const PORT = 4000;
 app.use(bodyParser.json()); // Parse JSON bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
 const corsOptions = {
-  origin: "*",
-  credentials: true,
-  optionSuccessStatus: 200,
+  origin: "*", // Allow all origins
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow specific HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
+  credentials: true, // Allow credentials (cookies, authorization headers, TLS client certificates)
 };
+
 app.use(cors(corsOptions));
-
-
 // Connect to MongoDB
 mongoose.connect(
   "mongodb+srv://shashanksonwane305:1IrdhnVfQFmGEenv@cluster0.o9dunyc.mongodb.net/?retryWrites=true&w=majority"
