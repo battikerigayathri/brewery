@@ -1,12 +1,16 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { connect } from 'mongoose';
+import { mongoose } from 'mongoose';
 import userRoutes from './src/routes/userRoutes.mjs';
 // import breweryRoutes from './routes/breweryRoutes.js';
 import reviewRoutes from './src/routes/reviewRoutes.mjs';
 import cors from "cors"
 const app = express();
-const PORT =  4000;
+app.use(express.json());
+
+const PORT = 4000;
+app.use(bodyParser.json()); // Parse JSON bodies
+app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
 const corsOptions = {
   origin: "*",
   credentials: true,
@@ -16,7 +20,7 @@ app.use(cors(corsOptions));
 
 
 // Connect to MongoDB
-connect(
+mongoose.connect(
   "mongodb+srv://shashanksonwane305:1IrdhnVfQFmGEenv@cluster0.o9dunyc.mongodb.net/?retryWrites=true&w=majority"
 )
   .then(() => {
